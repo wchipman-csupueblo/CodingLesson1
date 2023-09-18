@@ -1,7 +1,16 @@
 fun main(args: Array<String>) {
-    println("Hello World!")
+    val number = if(args.isNotEmpty()) args[0].toIntOrNull() else null
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+    println("$number is ${evenOrOdd(number)}")
+}
+
+fun evenOrOdd(num:Int?): String {
+    if (num != null) {
+        return if (num % 2 == 0) {
+            "even"
+        } else {
+            "odd"
+        }
+    }
+    return "Invalid input. Please enter a valid number."
 }
