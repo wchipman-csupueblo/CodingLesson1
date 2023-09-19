@@ -4,6 +4,7 @@ fun main(args: Array<String>) {
     println("$number is ${evenOrOdd(number)}")
     println("$number! is ${calculateFactorial(number)}")
     println("$input is reversed to ${reverseString(input)}")
+    println("$input is ${if (isPalindrome(input)) "a" else "not a"} palindrome")
 }
 
 fun evenOrOdd(num:Int?): String {
@@ -36,3 +37,8 @@ fun calculateFactorial(num: Int?): Long? {
 }
 
 fun reverseString(input: String) = input.reversed()
+
+fun isPalindrome(str: String): Boolean {
+    val cleanStr = str.lowercase().replace(Regex("[^a-zA-Z0-9]"),"")
+    return cleanStr == reverseString(cleanStr)
+}
