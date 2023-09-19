@@ -1,8 +1,9 @@
 fun main(args: Array<String>) {
     val number = if(args.isNotEmpty()) args[0].toIntOrNull() else null
-
+    val input = if(args.size > 1) args[1] else ""
     println("$number is ${evenOrOdd(number)}")
     println("$number! is ${calculateFactorial(number)}")
+    println("$input is reversed to ${reverseString(input)}")
 }
 
 fun evenOrOdd(num:Int?): String {
@@ -33,3 +34,5 @@ fun calculateFactorial(num: Int?): Long? {
         }
     }
 }
+
+fun reverseString(input: String) = input.reversed()
